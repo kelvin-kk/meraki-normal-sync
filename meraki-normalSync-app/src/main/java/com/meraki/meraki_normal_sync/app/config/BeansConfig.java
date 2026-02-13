@@ -30,7 +30,13 @@ public class BeansConfig {
 
     @Bean
     public MappingLoader mappingLoader(AppProperties props) {
-        var loader = new XmlMappingLoader(Path.of(props.getMappingsDir()));
+        String dir = props.getMappingsDir().trim();
+
+        Path basePath = dir.startsWith("file:")
+                ? Path.of(java.net.URI.create(dir))
+                : Path.of(dir);
+
+        var loader = new XmlMappingLoader(basePath);
         loader.loadAll();
         return loader;
     }
@@ -78,5 +84,10 @@ public class BeansConfig {
     @Bean
     public KafkaIngestionListener kafkaIngestionListener(RecordHandler handler, DlqPublisher dlq) {
         return new KafkaIngestionListener(handler, dlq);
+    }
+
+    @Bean
+    public ObjectMapper objectMapper() {
+        return new ObjectMapper();
     }
 }
