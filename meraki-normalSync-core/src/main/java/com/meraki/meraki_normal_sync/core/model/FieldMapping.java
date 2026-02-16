@@ -1,5 +1,8 @@
 package com.meraki.meraki_normal_sync.core.model;
 
+import java.util.Locale;
+import java.util.Objects;
+
 public class FieldMapping {
 
     private String fieldName;
@@ -8,8 +11,12 @@ public class FieldMapping {
 
     private String destColumn;
     private boolean primaryKey;
-    private String dataType;
-    private String transform;
+    private String dataType;     // VARCHAR2, NUMBER, CLOB, DATE, TIMESTAMP...
+    private Integer length;      // for VARCHAR2
+    private Integer precision;   // for NUMBER(p,s)
+    private Integer scale;       // for NUMBER(p,s)
+
+    private String transform;    // optional
 
     public String getFieldName() { return fieldName; }
     public void setFieldName(String fieldName) { this.fieldName = fieldName; }
@@ -29,7 +36,30 @@ public class FieldMapping {
     public String getDataType() { return dataType; }
     public void setDataType(String dataType) { this.dataType = dataType; }
 
+    public Integer getLength() { return length; }
+    public void setLength(Integer length) { this.length = length; }
+
+    public Integer getPrecision() { return precision; }
+    public void setPrecision(Integer precision) { this.precision = precision; }
+
+    public Integer getScale() { return scale; }
+    public void setScale(Integer scale) { this.scale = scale; }
+
     public String getTransform() { return transform; }
     public void setTransform(String transform) { this.transform = transform; }
+
+    public String destColumnUpper() {
+        return destColumn == null ? null : destColumn.trim().toUpperCase(Locale.ROOT);
+    }
+
+    public String dataTypeUpper() {
+        return dataType == null ? null : dataType.trim().toUpperCase(Locale.ROOT);
+    }
+
+    public void validateBasic() {
+        Objects.requireNonNull(fieldName, "fieldName is required");
+        Objects.requireNonNull(destColumn, "destColumn is required");
+        // fieldNumber/fieldPos are validated by loader rules (RECID uses -1/-1)
+    }
 
 }

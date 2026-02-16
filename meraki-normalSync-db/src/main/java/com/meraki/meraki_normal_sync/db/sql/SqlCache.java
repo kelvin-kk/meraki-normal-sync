@@ -7,7 +7,15 @@ import java.util.function.Supplier;
 public class SqlCache {
     private final Map<String, String> cache = new ConcurrentHashMap<>();
 
-    public String getOrPut(String key, Supplier<String> supplier) {
-        return cache.computeIfAbsent(key, k -> supplier.get());
+    public String getOrPut(String key, Supplier<String> builder) {
+        return cache.computeIfAbsent(key, k -> builder.get());
+    }
+
+    public void clear() {
+        cache.clear();
+    }
+
+    public int size() {
+        return cache.size();
     }
 }

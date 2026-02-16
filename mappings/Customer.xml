@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
-<Customer sourceTable="T24.FBNK_CUSTOMER" destTable="KNOBS_CUSTOMER">
+<Customer sourceTable="T24.FBNK_CUSTOMER" destTable="BNK_CUSTOMER_TEST">
+
     <t24report>
         <fieldName>RECID</fieldName>
         <fieldNumber>-1</fieldNumber>
         <fieldPos>-1</fieldPos>
-        <destColumn>REC_ID</destColumn>
+        <destColumn>ID</destColumn>
         <isPrimaryKey>true</isPrimaryKey>
+        <dataType>VARCHAR2</dataType>
+        <length>40</length>
     </t24report>
 
     <t24report>
@@ -13,14 +16,399 @@
         <fieldNumber>2</fieldNumber>
         <fieldPos>1</fieldPos>
         <destColumn>SHORT_NAME</destColumn>
-        <transform>trim</transform>
+        <dataType>VARCHAR2</dataType>
+        <length>40</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>address</fieldName>
+        <fieldNumber>6</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>ADDRESS</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>40</length>
+        <transform></transform>
     </t24report>
 
     <t24report>
         <fieldName>email</fieldName>
         <fieldNumber>69</fieldNumber>
         <fieldPos>1</fieldPos>
-        <destColumn>EMAIL</destColumn>
-        <transform>lower</transform>
+        <destColumn>EMAIL_ADDRESS</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>100</length>
+        <transform></transform>
     </t24report>
+
+    <t24report>
+        <fieldName>phoneNumber</fieldName>
+        <fieldNumber>67</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>PHONE_NUMBER</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>100</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>customerRiskStatus</fieldName>
+        <fieldNumber>29</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>CUSTOMER_RISK_STATUS</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>40</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>sector</fieldName>
+        <fieldNumber>23</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>SECTOR</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>40</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>industry</fieldName>
+        <fieldNumber>26</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>INDUSTRY</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>40</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>country</fieldName>
+        <fieldNumber>9</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>COUNTRY</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>40</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>residence</fieldName>
+        <fieldNumber>30</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>RESIDENCE</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>40</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>recordStatus</fieldName>
+        <fieldNumber>181</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>RECORD_STATUS</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>15</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>inputter</fieldName>
+        <fieldNumber>183</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>INPUTTER</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>100</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>versionNumber</fieldName>
+        <fieldNumber>182</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>VERSION_NUMBER</destColumn>
+        <dataType>NUMBER</dataType>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>authoriser</fieldName>
+        <fieldNumber>185</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>AUTHORISER</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>100</length>
+        <transform></transform>
+    </t24report>
+
+    <!-- TIME_STAMP intentionally NOT mapped => DB default SYSTIMESTAMP -->
+
+    <t24report>
+        <fieldName>companyId</fieldName>
+        <fieldNumber>186</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>COMPANY_ID</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>40</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>target</fieldName>
+        <fieldNumber>27</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>TARGET</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>50</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>legalId</fieldName>
+        <fieldNumber>34</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>LEGAL_ID</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>500</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>accountOfficer</fieldName>
+        <fieldNumber>24</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>ACCOUNT_OFFICER</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>45</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>nationality</fieldName>
+        <fieldNumber>28</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>NATIONALITY</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>introducer</fieldName>
+        <fieldNumber>32</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>INTRODUCER</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>legalDocName</fieldName>
+        <fieldNumber>35</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>LEGAL_DOC_NAME</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>legalIssAuth</fieldName>
+        <fieldNumber>37</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>LEGAL_ISS_AUTH</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>legalIssDate</fieldName>
+        <fieldNumber>38</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>LEGAL_ISS_DATE</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>400</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>offPhone</fieldName>
+        <fieldNumber>40</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>OFF_PHONE</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>language</fieldName>
+        <fieldNumber>45</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>LANGUAGE</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>companyBook</fieldName>
+        <fieldNumber>48</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>COMPANY_BOOK</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>clsCParty</fieldName>
+        <fieldNumber>52</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>CLS_CPARTY</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>gender</fieldName>
+        <fieldNumber>63</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>GENDER</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>dateOfBirth</fieldName>
+        <fieldNumber>64</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>DATE_OF_BIRTH</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>maritalStatus</fieldName>
+        <fieldNumber>65</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>MARITAL_STATUS</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>occupation</fieldName>
+        <fieldNumber>72</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>OCCUPATION</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>employersName</fieldName>
+        <fieldNumber>74</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>EMPLOYERS_NAME</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>localRef</fieldName>
+        <fieldNumber>179</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>LOCAL_REF</destColumn>
+        <dataType>CLOB</dataType>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>currNo</fieldName>
+        <fieldNumber>182</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>CURR_NO</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>dateTime</fieldName>
+        <fieldNumber>184</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>DATE_TIME</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>deptCode</fieldName>
+        <fieldNumber>187</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>DEPT_CODE</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>mnemonic</fieldName>
+        <fieldNumber>1</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>MNEMONIC</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>street</fieldName>
+        <fieldNumber>5</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>STREET</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>townCountry</fieldName>
+        <fieldNumber>7</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>TOWN_COUNTRY</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>postCode</fieldName>
+        <fieldNumber>8</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>POST_CODE</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>200</length>
+        <transform></transform>
+    </t24report>
+
+    <t24report>
+        <fieldName>postingRestrict</fieldName>
+        <fieldNumber>46</fieldNumber>
+        <fieldPos>1</fieldPos>
+        <destColumn>POSTING_RESTRICT</destColumn>
+        <dataType>VARCHAR2</dataType>
+        <length>45</length>
+        <transform></transform>
+    </t24report>
+
 </Customer>

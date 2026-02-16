@@ -17,7 +17,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.kafka.core.KafkaTemplate;
-
+import com.meraki.meraki_normal_sync.db.sql.SqlCache;
+import com.meraki.meraki_normal_sync.db.sql.TypedOracleMergeBuilder;
 import java.nio.file.Path;
 
 @Configuration
@@ -36,9 +37,7 @@ public class BeansConfig {
                 ? Path.of(java.net.URI.create(dir))
                 : Path.of(dir);
 
-        var loader = new XmlMappingLoader(basePath);
-        loader.loadAll();
-        return loader;
+        return new XmlMappingLoader(basePath);
     }
 
     @Bean
@@ -47,8 +46,10 @@ public class BeansConfig {
     }
 
     @Bean
-    public OracleWriter oracleWriter(NamedParameterJdbcTemplate jdbc) {
-        return new OracleWriter(jdbc);
+    public OracleWriter oracleWriter(NamedParameterJdbcTemplate jdbc,
+                                     TypedOracleMergeBuilder mergeBuilder,
+                                     SqlCache sqlCache) {
+        return new OracleWriter(jdbc, mergeBuilder, sqlCache);
     }
 
     @Bean
@@ -89,5 +90,15 @@ public class BeansConfig {
     @Bean
     public ObjectMapper objectMapper() {
         return new ObjectMapper();
+    }
+
+    @Bean
+    public SqlCache sqlCache() {
+        return new SqlCache();
+    }
+
+    @Bean
+    public TypedOracleMergeBuilder typedOracleMergeBuilder() {
+        return new TypedOracleMergeBuilder();
     }
 }
