@@ -14,7 +14,8 @@ public class FieldMapping {
     private String dataType;     // VARCHAR2, NUMBER, CLOB, DATE, TIMESTAMP...
     private Integer length;      // for VARCHAR2
     private Integer precision;   // for NUMBER(p,s)
-    private Integer scale;       // for NUMBER(p,s)
+    private Integer scale;// for NUMBER(p,s)
+    private boolean multiValue;
 
     private String transform;    // optional
 
@@ -61,5 +62,8 @@ public class FieldMapping {
         Objects.requireNonNull(destColumn, "destColumn is required");
         // fieldNumber/fieldPos are validated by loader rules (RECID uses -1/-1)
     }
+
+    public boolean isMultiValue() { return multiValue; }
+    public void setMultiValue(boolean multiValue) { this.multiValue = multiValue; }
 
 }

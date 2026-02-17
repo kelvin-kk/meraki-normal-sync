@@ -92,6 +92,7 @@ public class XmlMappingLoader implements MappingLoader {
 
         // optional
         fm.setTransform(optText(r, "transform").orElse(null));
+        fm.setMultiValue(Boolean.parseBoolean(optText(r, "multiValue").orElse("false")));
         fm.setPrimaryKey(Boolean.parseBoolean(optText(r, "isPrimaryKey").orElse("false")));
 
         // NEW optional typing fields

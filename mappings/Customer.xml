@@ -325,9 +325,10 @@
     <t24report>
         <fieldName>localRef</fieldName>
         <fieldNumber>179</fieldNumber>
-        <fieldPos>1</fieldPos>
+        <fieldPos>-1</fieldPos>
         <destColumn>LOCAL_REF</destColumn>
         <dataType>CLOB</dataType>
+        <multiValue>true</multiValue>
         <transform></transform>
     </t24report>
 
