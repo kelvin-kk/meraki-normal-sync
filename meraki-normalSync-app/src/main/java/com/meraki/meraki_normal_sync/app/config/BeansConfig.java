@@ -83,11 +83,6 @@ public class BeansConfig {
     }
 
     @Bean
-    public KafkaIngestionListener kafkaIngestionListener(RecordHandler handler, DlqPublisher dlq) {
-        return new KafkaIngestionListener(handler, dlq);
-    }
-
-    @Bean
     public ObjectMapper objectMapper() {
         return new ObjectMapper();
     }
